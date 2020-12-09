@@ -125,7 +125,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/12/08/cnn-rnn—文本分类/rnn_architecture.png">
 <meta property="og:image" content="http://yoursite.com/2020/12/08/cnn-rnn—文本分类/six.jpg">
 <meta property="og:image" content="http://yoursite.com/2020/12/08/cnn-rnn—文本分类/seven.jpg">
-<meta property="og:updated_time" content="2020-12-09T02:48:39.224Z">
+<meta property="og:updated_time" content="2020-12-09T02:56:01.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cnn_rnn—文本分类">
 <meta name="twitter:description" content="环境 python3.6 tensorflow-gpu 1.13.1  数据集使用的是THUCNews的一个子训练集，因为原本数据集太大，包含的文本数量太多，在libsvm分类的时候就遇到了构建的特征向量超过1.3T，同时带来的就是漫长的等待时间，本次训练使用了其中10个分布类，每个分类包含6500条数据。类别如下:  体育、财经、房产、家具、教育、科技、时尚、时政、游戏、娱乐  数据集划分如下：">
@@ -428,7 +428,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-12-09 10:48:39" itemprop="dateModified" datetime="2020-12-09T10:48:39+08:00">2020-12-09</time>
+                <time title="修改时间：2020-12-09 10:56:01" itemprop="dateModified" datetime="2020-12-09T10:56:01+08:00">2020-12-09</time>
               
             
           </span>
@@ -522,7 +522,7 @@
 <li>验证集：500*10</li>
 <li>测试集：1000*10</li>
 </ul>
-<p>##子数据集构建<br>从原始数据集生成子数据集的过程：</p>
+<h2 id="子数据集构建"><a href="#子数据集构建" class="headerlink" title="子数据集构建"></a>子数据集构建</h2><p>从原始数据集生成子数据集的过程：</p>
 <ul>
 <li>copy_data.sh用于从每个分类拷贝6500个文件</li>
 <li>cenws_group.py用于将多个文件整合到一个文件<br>copy_data.sh执行方法：</li>
@@ -562,7 +562,7 @@
 </ul>
 <p>可开始训练</p>
 <p><img src="/2020/12/08/cnn-rnn—文本分类/four.png"></p>
-<p>在验证集上的最佳效果为93.32%，且只经过了5轮迭代就已经停止。</p>
+<p>在验证集上的最佳效果为95.38%，且只经过了5轮迭代就已经停止。</p>
 <ul>
 <li>测试<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python run_cnn.py test</span><br></pre></td></tr></table></figure>
 </li>
@@ -584,13 +584,13 @@
 </ul>
 <p>可开始训练</p>
 <p><img src="/2020/12/08/cnn-rnn—文本分类/six.jpg"></p>
-<p>在验证集上的最佳效果为93.32%，且只经过了8轮迭代就已经停止。</p>
+<p>在验证集上的最佳效果为92.20%，且只经过了8轮迭代就已经停止。</p>
 <ul>
 <li>测试<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python run_rnn.py test</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="/2020/12/08/cnn-rnn—文本分类/seven.jpg"></p>
-<p>在测试集上的准确率达到了94.22%，且各类的precision, recall和f1-score，除了家居这一类别，都超过了0.9。</p>
+<p>在测试集上的准确率达到了94.74%，且各类的precision, recall和f1-score，除了家居这一类别，都超过了0.9。</p>
 <p>从混淆矩阵可以看出分类效果非常优秀。</p>
 <p>对比两个模型，可见RNN除了在家居分类的表现不是很理想，其他几个类别较CNN差别不大。</p>
 
@@ -909,7 +909,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">2.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理"><span class="nav-number">3.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN"><span class="nav-number">4.</span> <span class="nav-text">CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN"><span class="nav-number">5.</span> <span class="nav-text">RNN</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">2.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子数据集构建"><span class="nav-number">3.</span> <span class="nav-text">子数据集构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理"><span class="nav-number">4.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN"><span class="nav-number">5.</span> <span class="nav-text">CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN"><span class="nav-number">6.</span> <span class="nav-text">RNN</span></a></li></ol></div>
             
 
           </div>
